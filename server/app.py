@@ -18,6 +18,26 @@ def print_string(student):
     print(student)
     return student
 
-@app.route('/count/<int:parameter>')
-def count(parameter):
-    return str(parameter)
+@app.route('/count/<int:param>')
+def count(param):
+    numbers=""
+    for num in range(0,param):
+        numbers = numbers+str(num)+'\n' 
+    print(numbers) 
+    return numbers
+
+@app.route("/math/<int:num1>/<string:operation>/<int:num2>")
+def math(num1, operation, num2):
+    result=0
+    if operation == '+':
+        result = num1 + num2
+    elif operation == '-':
+        result = num1 - num2
+    elif operation == '*':
+        result = num1 * num2
+    elif operation == 'div':
+        result = num1 / num2
+    else:
+        result = num1 % num2
+    
+    return str(result)
