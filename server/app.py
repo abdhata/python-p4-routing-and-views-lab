@@ -13,7 +13,7 @@ if __name__ == '__main__':
 def index():
     return '<h1>Python Operations with Flask Routing and Views</h1>'
 
-@app.route('/print/<studentname>')
-def student(studentname):
-    print(f'This is the student details for {studentname}')
-    return f'<h1>Student details for {studentname}</h1>'
+@app.route('/print/<string:student>')
+def print_string(student):
+    print(student)
+    return student
