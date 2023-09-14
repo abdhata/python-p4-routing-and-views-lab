@@ -17,3 +17,7 @@ def index():
 def print_string(student):
     print(student)
     return student
+
+@app.route('/count/<int:parameter>')
+def count(parameter):
+    return str(parameter)
